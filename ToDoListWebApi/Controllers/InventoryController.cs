@@ -13,9 +13,16 @@ namespace ToDoListWebApi.Controllers
     public class InventoryController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<InventoryItems> AddInventoryItems()
+        public ActionResult<InventoryItems> AddInventoryItems(InventoryItems items)
         {
-            return Ok();
+            var inventoryItems = _service.AddInventoryItems(items);
+
+            if (inventoryItems == null)
+            {
+                return NotFound();
+            }
+
+            return inventoryItems;
         }
     }
 }

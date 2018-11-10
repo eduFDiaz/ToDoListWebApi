@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ToDoListWebApi.Services;
 
 namespace ToDoListWebApi
 {
@@ -17,6 +18,8 @@ namespace ToDoListWebApi
         {
             services.AddMvc()
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+
+            services.AddSingleton<IIventoryServices, InventoryServices>();
             
         }
 
