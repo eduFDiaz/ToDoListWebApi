@@ -21,5 +21,10 @@ namespace ToDoListWebApi.Services
 
             return items;
         }
+
+        public Dictionary<string, InventoryItems> GetInventoryItems()
+        {
+            return _inventoryItems;
+        }
     }
 }

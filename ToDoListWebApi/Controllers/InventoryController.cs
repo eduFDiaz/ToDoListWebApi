@@ -32,5 +32,18 @@ namespace ToDoListWebApi.Controllers
 
             return inventoryItems;
         }
+
+        [HttpGet]
+        public ActionResult<Dictionary<string,InventoryItems>> GetInventoryItems()
+        {
+            var inventoryItems = _services.GetInventoryItems();
+
+            if (inventoryItems.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return inventoryItems;
+        }
     }
 }
