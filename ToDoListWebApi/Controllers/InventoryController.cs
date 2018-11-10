@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ToDoListWebApi.Models;
 
 namespace ToDoListWebApi.Controllers
 {
@@ -11,5 +12,10 @@ namespace ToDoListWebApi.Controllers
     [ApiController]
     public class InventoryController : ControllerBase
     {
+        [HttpPost]
+        public ActionResult<InventoryItems> AddInventoryItems()
+        {
+            return Ok();
+        }
     }
 }
