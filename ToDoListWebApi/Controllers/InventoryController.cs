@@ -21,6 +21,7 @@ namespace ToDoListWebApi.Controllers
         }
 
         [HttpPost]
+        [Route("AddInventoryItems")]
         public ActionResult<InventoryItems> AddInventoryItems(InventoryItems items)
         {
             var inventoryItems = _services.AddInventoryItems(items);
@@ -34,6 +35,7 @@ namespace ToDoListWebApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetInventoryItems")]
         public ActionResult<Dictionary<string,InventoryItems>> GetInventoryItems()
         {
             var inventoryItems = _services.GetInventoryItems();
